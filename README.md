@@ -3,19 +3,23 @@ Memoization is a simple technique for making pure functions that has a computati
 Simple demonstration on how to use it ->
 
 
-static void Main(String[] args)
-{
+
+static void Main(String[] args){
+
 	Stopwatch pureCall = Stopwatch.StartNew();	
 	BigInteger a = factorial(100);
+	
 	pureCall.Stop();
 	Stopwatch firstCall = Stopwatch.StartNew();
+    
     BigInteger l = Utils.GetInstance().Memoize<BigInteger, BigInteger>(factorial)(100);
     firstCall.Stop();
+    
     Stopwatch secondCall = Stopwatch.StartNew();
     
     BigInteger z = Utils.GetInstance().Memoize<BigInteger, BigInteger>(factorial)(100);
     secondCall.Stop();
-    
+
     Console.WriteLine(String.Format("Runtime of the function with memoize with not cached params: {0}", firstCall.ElapsedMilliseconds));
 
     Console.WriteLine(String.Format("Runtime of the function with memoize with cached params : {0}", secondCall.ElapsedMilliseconds));
