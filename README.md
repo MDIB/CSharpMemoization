@@ -20,6 +20,8 @@ Simple demonstration on how to use it ->
     BigInteger z = Utils.GetInstance().Memoize<BigInteger, BigInteger>(factorial)(100);
     secondCall.Stop();
 
+    Console.WriteLine(String.Format("Runtime of the pure call of the function : {0}", pureCall.ElapsedMilliseconds));
+
     Console.WriteLine(String.Format("Runtime of the function with memoize with not cached params: {0}", firstCall.ElapsedMilliseconds));
 
     Console.WriteLine(String.Format("Runtime of the function with memoize with cached params : {0}", secondCall.ElapsedMilliseconds));
