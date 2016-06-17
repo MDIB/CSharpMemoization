@@ -4,7 +4,7 @@ Simple demonstration on how to use it ->
 
 
 
-static void Main(String[] args){
+	static void Main(String[] args){
 
 	Stopwatch pureCall = Stopwatch.StartNew();	
 	BigInteger a = factorial(100);
@@ -23,11 +23,11 @@ static void Main(String[] args){
     Console.WriteLine(String.Format("Runtime of the function with memoize with not cached params: {0}", firstCall.ElapsedMilliseconds));
 
     Console.WriteLine(String.Format("Runtime of the function with memoize with cached params : {0}", secondCall.ElapsedMilliseconds));
-}
+	}
 
 
-static BigInteger factorial(BigInteger n) 
-{
-	if (n < 2) return n;
-	return n* factorial(n - 1);
-}
+	static BigInteger factorial(BigInteger n) 
+	{
+		if (n < 2) return n;
+		return n* factorial(n - 1);
+	}
